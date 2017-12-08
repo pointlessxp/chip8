@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <script>window.$ = require('../node_modules/jquery/dist/jquery.js')</script>
+    <style>
+      .pixel {
+        height: 10px;
+        width: 10px;
+        background-color: black;
+      }
+
+      td, tr {
+        padding: 0px;
+        margin: 0px;
+      }
+    </style>
+  </head>
+  <body>
+    
+    <table>
+      <tbody id="pixels">
+        <script>
+        let pixels = '';
+        for (let i = 0; i < 32; ++i) {
+          pixels += '<tr>';
+          for (let j = 0; j < 64; ++j) {
+            pixels += `<td class="row:${i} column:${j}">
+              <div class="pixel"></div> 
+              </td>`;
+          }
+          pixels += '</tr>';
+        }
+      
+        $('#pixels').append(pixels);
+        </script>
+      </tbody>
+    </table>
+
+  </body>
+</html>
